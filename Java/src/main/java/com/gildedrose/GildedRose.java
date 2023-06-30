@@ -39,15 +39,15 @@ class GildedRose {
                 if (item.name.startsWith("Conjured")) {
                     item.quality = item.quality - 2;
                     //The Quality of an item is never negative
-                    if(item.quality<0){
+                    if (item.quality < 0) {
                         item.quality = 0;
                     }
                 } else
-                //normal product quality degradation
-                //Sulfuras never degrade
-                if (item.quality > 0 && !item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                    //normal product quality degradation
+                    //Sulfuras never degrade
+                    if (item.quality > 0 && !item.name.equals("Sulfuras, Hand of Ragnaros")) {
                         item.quality = item.quality - 1;
-                }
+                    }
             }
 
             //Sulfuras never has to be sold all other proudcts get the sellIn properties updated
@@ -63,28 +63,24 @@ class GildedRose {
                     if (item.quality < 50) {
                         item.quality = item.quality + 1;
                     }
-                } else {
-                    if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        if (item.quality > 0) {
-
-                           // "Conjured" items degrade in Quality twice as fast as normal items
-                            if (item.name.startsWith("Conjured")) {
-                                item.quality = item.quality - 2;
-                                //The Quality of an item is never negative
-                                if(item.quality<0){
-                                    item.quality = 0;
-                                }
-                            } else
-                                //"Sulfuras", being a legendary item, never has to be sold or decreases in Quality
-                                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                                // normal product Once the sell by date has passed, Quality degrades twice as fast
-                                item.quality = item.quality - 1;
-                            }
+                } else if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert") && item.quality > 0) {
+                    // "Conjured" items degrade in Quality twice as fast as normal items
+                    if (item.name.startsWith("Conjured")) {
+                        item.quality = item.quality - 2;
+                        //The Quality of an item is never negative
+                        if (item.quality < 0) {
+                            item.quality = 0;
                         }
-                    } else {
-                        item.quality = 0;
-                    }
+                    } else
+                        //"Sulfuras", being a legendary item, never has to be sold or decreases in Quality
+                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                            // normal product Once the sell by date has passed, Quality degrades twice as fast
+                            item.quality = item.quality - 1;
+                        }
+                } else {
+                    item.quality = 0;
                 }
+
             }
         }//end for
 
