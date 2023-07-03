@@ -14,7 +14,7 @@ public class AgeBrieRule extends AbstractRule {
     }
 
     @Override
-    public void applyRule(Item item) {
+    public void applyRule(final Item item) {
         item.quality++;
         item.sellIn--;
         if (item.sellIn < 0) {

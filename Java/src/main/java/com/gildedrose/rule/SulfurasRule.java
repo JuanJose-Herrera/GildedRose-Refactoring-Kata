@@ -15,12 +15,12 @@ public class SulfurasRule implements Rule {
     }
 
     @Override
-    public void applyRule(Item item) {
+    public void applyRule(final Item item) {
 
     }
 
     @Override
-    public void runPostValidations(Item item) {
+    public void runPostValidations(final Item item) {
 
     }
 }

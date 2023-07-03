@@ -5,7 +5,7 @@ import com.gildedrose.Item;
 public class AbstractRule implements Rule {
 
     @Override
-    public void applyRule(Item item) {
+    public void applyRule(final Item item) {
         item.quality--;
         item.sellIn--;
         if (item.sellIn < 0) {
@@ -14,7 +14,7 @@ public class AbstractRule implements Rule {
     }
 
     @Override
-    public void runPostValidations(Item item) {
+    public void runPostValidations(final Item item) {
         if (item.quality > 50) {
             item.quality = 50;
         }

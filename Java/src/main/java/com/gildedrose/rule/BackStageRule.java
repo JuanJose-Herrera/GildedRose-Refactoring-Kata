@@ -15,7 +15,7 @@ public class BackStageRule extends AbstractRule {
     }
 
     @Override
-    public void applyRule(Item item) {
+    public void applyRule(final Item item) {
         item.quality++;
         if (item.sellIn <= 10 && item.sellIn > 5) {
             item.quality++;
@@ -27,7 +27,7 @@ public class BackStageRule extends AbstractRule {
     }
 
     @Override
-    public void runPostValidations(Item item) {
+    public void runPostValidations(final Item item) {
         if (item.quality > 50) {
             item.quality = 50;
         }

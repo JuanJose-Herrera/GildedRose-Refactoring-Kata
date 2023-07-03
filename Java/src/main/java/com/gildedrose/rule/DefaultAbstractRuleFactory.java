@@ -5,7 +5,7 @@ import com.gildedrose.Item;
 public class DefaultAbstractRuleFactory {
 
 
-    public Rule getRule(Item item) {
+    public Rule getRule(final Item item) {
 
         switch (item.name) {
             case "Conjured Mana Cake":

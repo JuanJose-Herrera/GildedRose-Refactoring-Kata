@@ -4,9 +4,9 @@ import com.gildedrose.Item;
 
 public interface Rule {
 
-    void applyRule(Item item);
+    void applyRule(final Item item);
 
 
-    void runPostValidations(Item item);
+    void runPostValidations(final Item item);
 
 }

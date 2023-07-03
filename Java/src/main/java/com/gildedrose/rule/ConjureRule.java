@@ -14,7 +14,7 @@ public class ConjureRule extends AbstractRule {
     }
 
     @Override
-    public void applyRule(Item item) {
+    public void applyRule(final Item item) {
         item.quality -= 2;
         item.sellIn--;
         if (item.sellIn < 0) {
